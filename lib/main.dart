@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yeni/About.dart';
 
 void main() {
   runApp(const MyApp());
@@ -96,8 +97,9 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'Değişiklik Yapıldı',
             ),
+            ElevatedButton(onPressed: () =>gonder()git status, child: Text("git")),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
@@ -110,6 +112,13 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+
+  void gonder() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const About()),
     );
   }
 }
